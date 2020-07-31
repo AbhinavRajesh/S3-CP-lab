@@ -80,6 +80,10 @@ class Date {
                     month++;
                 } else 
                     day++;   
+            } else if ( day == 31 && month == 12 ) {
+                day = 1;
+                month = 1;
+                year++;
             }
             cout<<day<<"/"<<month<<"/"<<year;
         }
