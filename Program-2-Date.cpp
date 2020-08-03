@@ -44,6 +44,11 @@ class Date {
                             else 
                                 return 1;
                         }
+                    } else {
+                        if ( day > 28 )
+                            return 0;
+                        else 
+                            return 1;
                     }
                 } else {
                     if ( day > 30 )
