@@ -62,7 +62,11 @@ class Date {
         void output() {
             cout<<"\n Valid. Next date ";
             if ( month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12 ) {
-                if (day == 31){
+                 if ( day == 31 && month == 12 ) {
+                    day = 1;
+                    month = 1;
+                    year++;
+                } else if (day == 31){
                     day = 1;
                     month++;
                 } else 
@@ -85,11 +89,7 @@ class Date {
                     month++;
                 } else 
                     day++;   
-            } else if ( day == 31 && month == 12 ) {
-                day = 1;
-                month = 1;
-                year++;
-            }
+            } 
             cout<<day<<"/"<<month<<"/"<<year;
         }
 } date;
