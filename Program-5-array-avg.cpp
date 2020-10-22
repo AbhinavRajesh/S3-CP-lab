@@ -15,9 +15,10 @@ public:
         for (int i = 0; i < n; i++)
             cin >> a[i];
     }
-    int static findAverage(int *ptr, int n, int multi = 1)
+    float static findAverage(int *ptr, int n, int multi = 1)
     {
-        int i, avg = 0;
+        int i;
+        float avg = 0;
         for (i = 0; i < n; i++)
         {
             *(ptr + i) *= multi;
@@ -29,7 +30,8 @@ public:
 
 int main()
 {
-    int i, n, multi, average1, average2;
+    int i, n, multi;
+    float average1, average2;
     cout << "\n Enter the number of digits in the array:";
     cin >> n;
     cout << "\n Enter the digits: ";
