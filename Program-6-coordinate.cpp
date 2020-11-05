@@ -36,6 +36,7 @@ int main()
     int flag = validate(x1, x2, x3, y1, y2, y3);
     if (flag)
     {
+        cout << "\n Valid Triangle! \n";
         cout << "The Shortest distance between 3 coordinates: ";
         shortest(x1, x2, x3, y1, y2, y3);
     }
