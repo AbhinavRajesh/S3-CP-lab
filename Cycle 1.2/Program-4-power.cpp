@@ -33,6 +33,8 @@ void power(int n, int p)
 int main()
 {
     int choice, p;
+    char ch;
+label:
     cout << "\n What value are you entering?";
     cout << "\n -----MENU-----";
     cout << "\n 1. Double";
@@ -85,5 +87,9 @@ int main()
         power(float(floatN), p);
         break;
     }
+    cout << "\n Do you want to continue? (y/N): ";
+    cin >> ch;
+    if (ch == 'y' || ch == 'Y')
+        goto label;
     return 0;
 }
