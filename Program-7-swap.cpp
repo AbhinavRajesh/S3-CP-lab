@@ -1,53 +1,63 @@
 #include <iostream>
 using namespace std;
 
-void swapValue(int a, int b)
-{
-    int temp = a;
-    a = b;
-    b = temp;
-    cout << "\n Value of variables after swap in swapValue() function [ Call By Value Method ] \n";
-    cout << " a = " << a << "\n b = " << b;
-}
-
-void swapReference(int &a, int &b)
-{
-    int temp = a;
-    a = b;
-    b = temp;
-    cout << "\n Value of variables after swap in swapReference() function [ Call By Reference Method ] \n";
-    cout << " a = " << a << "\n b = " << b;
-}
-
-void swapAddress(int *a, int *b)
+class Swap
 {
 
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-    cout << "\n Value of variables after swap in swapAddress() function [ Call By Address Method ] \n";
-    cout << " a = " << *a << "\n b = " << *b;
-}
+public:
+    int a, b;
+    Swap()
+    {
+        cout << "\n Enter the values of a and b:";
+        cin >> a >> b;
+        cout << "\n Values of variable: \n"
+             << " a = " << a << "\n b = " << b;
+    }
+    void swapValue(int a, int b)
+    {
+        int temp = a;
+        a = b;
+        b = temp;
+        cout << "\n Value of variables after swap in swapValue() function [ Call By Value Method ] \n";
+        cout << " a = " << a << "\n b = " << b;
+    }
+
+    void swapReference(int &a, int &b)
+    {
+        int temp = a;
+        a = b;
+        b = temp;
+        cout << "\n Value of variables after swap in swapReference() function [ Call By Reference Method ] \n";
+        cout << " a = " << a << "\n b = " << b;
+    }
+
+    void swapAddress(int *a, int *b)
+    {
+
+        int temp = *a;
+        *a = *b;
+        *b = temp;
+        cout << "\n Value of variables after swap in swapAddress() function [ Call By Address Method ] \n";
+        cout << " a = " << *a << "\n b = " << *b;
+    }
+};
 
 int main()
 {
-    int a, b, temp;
-    cout << "\n Enter the values of a and b:";
-    cin >> a >> b;
-    cout << "\n Values of variable: \n"
-         << " a = " << a << "\n b = " << b;
-    swapValue(a, b);
+    int temp;
+    Swap s;
+    s.swapValue(s.a, s.b);
     cout << "\n Values of variables in Main after Call by Value Method \n";
-    cout << " a = " << a << "\n b = " << b;
-    swapReference(a, b);
+    cout << " a = " << s.a << "\n b = " << s.b;
+    s.swapReference(s.a, s.b);
     cout << "\n Values of variables in Main after Call by Reference Method \n";
-    cout << " a = " << a << "\n b = " << b;
-    temp = a;
-    a = b;
-    b = temp;
+    cout << " a = " << s.a << "\n b = " << s.b;
+    temp = s.a;
+    s.a = s.b;
+    s.b = temp;
     cout << "\n Values of variable: \n"
-         << " a = " << a << "\n b = " << b;
-    swapAddress(&a, &b);
+         << " a = " << s.a << "\n b = " << s.b;
+    s.swapAddress(&s.a, &s.b);
     cout << "\n Values of variables in Main after Call by Address Method \n";
-    cout << " a = " << a << "\n b = " << b;
+    cout << " a = " << s.a << "\n b = " << s.b;
 }
