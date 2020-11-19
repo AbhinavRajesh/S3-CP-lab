@@ -13,10 +13,13 @@ void getCoordinate(int &x, int &y, int i)
 
 int validate(int x1, int x2, int x3, int y1, int y2, int y3)
 {
-    float check = (x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) / 2;
-    if (check == 0)
-        return 0;
-    return 1;
+    float a = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
+    float b = sqrt(pow(x2 - x3, 2) + pow(y2 - y3, 2));
+    float c = sqrt(pow(x1 - x3, 2) + pow(y1 - y3, 2));
+    float s = (a + b + c) / 2;
+    if (s * (s - a) * (s - b) * (s - c) != 0)
+        return 1;
+    return 0;
 }
 
 inline void shortest(int x1, int x2, int x3, int y1, int y2, int y3)

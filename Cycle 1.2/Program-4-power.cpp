@@ -12,7 +12,7 @@ void power(double n, int p)
 void power(char n, int p)
 {
     cout << "\n In char function:";
-    cout << "\n " << n << " to the power " << p << " = " << n << "^" << p;
+    cout << "\n " << n << " to the power " << p << " = " << pow(n, p);
 }
 void power(long n, int p)
 {
