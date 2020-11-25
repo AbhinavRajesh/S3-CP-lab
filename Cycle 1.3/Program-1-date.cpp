@@ -61,9 +61,7 @@ public:
             elapsed += 31;
         }
         if (checkLeap() && month > 2)
-        {
             elapsed++;
-        }
         return elapsed;
     }
     void setDate(Date &temp, int elapsedDate)
@@ -130,8 +128,6 @@ int main()
         newDate.show();
     }
     else
-    {
         cout << "\n Invalid Date!";
-    }
     return 0;
 }
