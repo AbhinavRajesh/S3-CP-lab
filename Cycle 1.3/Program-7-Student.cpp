@@ -170,7 +170,15 @@ int main()
                 B[i].getData();
             S->sort(n);
             cout << "\n Marklist of B-Tech Student (Sorted According to Marks)\n";
-            for (int i = 0; i < n; i++)
+            cout << "Name"
+                 << "\t"
+                 << "Reg No"
+                 << "\t"
+                 << "Age"
+                 << "\t"
+                 << "Marks" << endl;
+
+            for (int i = n - 1; i >= 0; i--)
             {
                 B[i].showData();
                 cout << endl;
@@ -185,7 +193,14 @@ int main()
                 M[i].getData();
             S->sort(n);
             cout << "\n Marklist of M-Tech Student (Sorted According to GPA)\n";
-            for (int i = 0; i < n; i++)
+            cout << "Name"
+                 << "\t"
+                 << "Reg No"
+                 << "\t"
+                 << "Age"
+                 << "\t"
+                 << "GPA" << endl;
+            for (int i = n - 1; i >= 0; i--)
             {
                 M[i].showData();
                 cout << endl;

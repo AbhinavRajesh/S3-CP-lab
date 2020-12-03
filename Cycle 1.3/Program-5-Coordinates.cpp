@@ -34,8 +34,10 @@ class Rectangular
 public:
     void operator=(Polar P)
     {
-        x = P.getRadius() * cos((P.getAngle() * M_PI) / 180);
-        y = P.getRadius() * sin((P.getAngle() * M_PI) / 180);
+        x = (int)((P.getRadius() * cos((P.getAngle() * M_PI) / 180) * 100 + 0.5));
+        x = (float)(x / 100);
+        y = (int)((P.getRadius() * sin((P.getAngle() * M_PI) / 180) * 100 + 0.5));
+        y = (float)(y / 100);
     }
     void show()
     {

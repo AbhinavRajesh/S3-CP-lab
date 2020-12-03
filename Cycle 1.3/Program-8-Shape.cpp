@@ -26,13 +26,15 @@ public:
     {
         if (s1 <= 0 || s2 <= 0 || s3 <= 0)
             return false;
+        else if (s1 + s2 <= s3 || s1 + s3 <= s2 || s2 + s3 <= s1)
+            return false;
         return true;
     }
     void calculate()
     {
         if (!validate())
         {
-            cout << "\n Side lenght of Triangle cannot be less than or equal to 0!";
+            cout << "\n Invalid Side Lengths!";
             area = perimeter = 0;
         }
         else
