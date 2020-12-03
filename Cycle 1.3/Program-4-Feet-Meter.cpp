@@ -4,7 +4,8 @@ using namespace std;
 
 class Distance
 {
-    int feet, inch;
+    int feet;
+    float inch;
 
 public:
     Distance()
@@ -18,7 +19,7 @@ public:
     {
         inch = (meter * 100) / 2.54;
         feet = inch / 12;
-        inch = inch % 12;
+        inch = (int)inch % 12;
     }
     void show()
     {
